@@ -21,7 +21,7 @@ Spacescene::fn(){
         cirklar.push_back(Circle(RED,10,rand()%700,rand()%700,0,0,0.95));
         time -= 0.1;
     }*/
-    if (IsMouseButtonPressed(0)){
+    if (IsMouseButtonPressed(1)){
         cirklar.push_back(Circle(RED,10,worldMousePos.x, worldMousePos.y,0,0,0.95));
     }
 
