@@ -31,9 +31,14 @@ Camera2D CameraManager::GetCamera()
         camera.target = mouseWorldPos;
 
         // Zoom increment
-        float scaleFactor = 1.0f + (0.25f*fabsf(wheel));
+        scaleFactor = 1.0f + (0.25f*fabsf(wheel));
         if (wheel < 0) scaleFactor = 1.0f/scaleFactor;
         camera.zoom = Clamp(camera.zoom*scaleFactor, maxZoomOut, maxZoomIn);
     }
     return camera;
+}
+
+Vector2 CameraManager::ConvertToWorldPos(Vector2 MousePos)
+{
+    return GetScreenToWorld2D(MousePos, this->GetCamera());
 }
